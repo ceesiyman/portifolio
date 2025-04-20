@@ -8,10 +8,21 @@ class Experience extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['company', 'role', 'start_date', 'end_date', 'description'];
+    protected $fillable = [
+        'type',
+        'title',
+        'organization',
+        'company',
+        'role',
+        'start_date',
+        'end_date',
+        'description',
+        'skills'
+    ];
 
     protected $casts = [
+        'skills' => 'array',
         'start_date' => 'date',
-        'end_date' => 'date',
+        'end_date' => 'date'
     ];
 }
